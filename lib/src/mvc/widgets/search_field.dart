@@ -35,10 +35,11 @@ class SearchFiled extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children:[
-        Container(child: Image.asset('assets/ui/images/thinking_woman_purple_bg.png')),
+        Center(child: Container(child: Image.asset('assets/ui/images/thinking_woman_purple_bg.png'))),
         Container(
         alignment: Alignment.center,
-        height: 40.0,
+        height: 42.0,
+        width: 304,
         margin: showSearchIcon!
             ? const EdgeInsets.only(bottom: 3.5, top: 3.5, right: 2.0, left: 2.0)
             : isSearching!
