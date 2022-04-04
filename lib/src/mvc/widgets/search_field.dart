@@ -53,10 +53,10 @@ class SearchFiled extends StatelessWidget {
         decoration: InputDecoration(
           hintText: hintText == null ? "Search...":hintText,
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(30.0),
+            borderRadius: BorderRadius.circular(14.0),
           ),
-          // enabledBorder: InputBorder.none,
-          // focusedBorder: InputBorder.none,
+          enabledBorder: InputBorder.none,
+          focusedBorder: InputBorder.none,
           hintStyle: TextStyle(color: searchTextHintColor),
           suffixIcon: searchQueryController!.text.isNotEmpty
               ? IconButton(
