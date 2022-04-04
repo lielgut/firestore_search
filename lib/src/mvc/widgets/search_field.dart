@@ -65,6 +65,15 @@ class SearchFiled extends StatelessWidget {
               enabledBorder: InputBorder.none,
               focusedBorder: InputBorder.none,
               hintStyle: TextStyle(color: searchTextHintColor),
+              prefixIcon: searchQueryController!.text.isEmpty ?  IconButton(
+                alignment: Alignment.centerRight,
+                icon: const Icon(Icons.search,color: Color(0xff4D20D3),),
+                onPressed: onClearButtonPressed!,
+                )
+                  : const SizedBox(
+              height: 0.0,
+              width: 0.0,
+              ),
               suffixIcon: searchQueryController!.text.isNotEmpty
                   ? IconButton(
                       alignment: Alignment.centerRight,
@@ -72,10 +81,12 @@ class SearchFiled extends StatelessWidget {
                       icon: const Icon(Icons.clear),
                       onPressed: onClearButtonPressed!,
                     )
-                  : const SizedBox(
-                      height: 0.0,
-                      width: 0.0,
-                    ),
+                  : IconButton(
+                alignment: Alignment.centerRight,
+                color: clearSearchButtonColor,
+                icon: const Icon(Icons.keyboard_voice_outlined),
+                onPressed: (){} ,//TODO
+              ),
             ),
             textAlignVertical: TextAlignVertical.center,
             textInputAction: TextInputAction.search,
