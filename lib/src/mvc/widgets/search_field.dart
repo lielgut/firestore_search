@@ -49,7 +49,7 @@ class SearchFiled extends StatelessWidget {
         controller: searchQueryController,
         focusNode: searchFocusNode,
         decoration: InputDecoration(
-          hintText: "Search...",
+          hintText: "Sea",
           border: InputBorder.none,
           enabledBorder: InputBorder.none,
           focusedBorder: InputBorder.none,
