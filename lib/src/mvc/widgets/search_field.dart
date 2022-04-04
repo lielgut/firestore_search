@@ -12,6 +12,7 @@ class SearchFiled extends StatelessWidget {
   final Function(String)? onSearchQueryChanged;
   final Function(String)? onSearchQueryUpdated;
   final Function(String)? onEditingComplete;
+  final String? hintText;
   TextEditingController? searchQueryController;
   SearchFiled(
       {this.showSearchIcon = false,
@@ -26,6 +27,7 @@ class SearchFiled extends StatelessWidget {
       this.onSearchQueryChanged,
       this.onSearchQueryUpdated,
       this.onEditingComplete,
+        this.hintText,
       Key? key})
       : super(key: key);
 
@@ -49,8 +51,10 @@ class SearchFiled extends StatelessWidget {
         controller: searchQueryController,
         focusNode: searchFocusNode,
         decoration: InputDecoration(
-          hintText: "Sea",
-          border: InputBorder.none,
+          hintText: hintText == null ? "Search...":hintText,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(14.0),
+          ),
           enabledBorder: InputBorder.none,
           focusedBorder: InputBorder.none,
           hintStyle: TextStyle(color: searchTextHintColor),

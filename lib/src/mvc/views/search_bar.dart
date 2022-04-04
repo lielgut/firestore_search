@@ -13,9 +13,10 @@ class FirestoreSearchBar extends StatelessWidget {
   final Color? searchIconColor;
   final bool? showSearchIcon;
   final String? tag;
+  final String? hintText;
+
   FirestoreSearchBar(
-      {
-        required this.tag,
+      {required this.tag,
       this.clearSearchButtonColor,
       this.searchBackgroundColor,
       this.searchTextColor,
@@ -23,6 +24,7 @@ class FirestoreSearchBar extends StatelessWidget {
       this.searchBodyBackgroundColor,
       this.searchIconColor,
       this.showSearchIcon = false,
+      this.hintText,
       Key? key}); // const FirestoreSearchBar({Key? key}) : super(key: key);
 
   @override
@@ -40,6 +42,7 @@ class FirestoreSearchBar extends StatelessWidget {
               searchTextHintColor: searchTextHintColor,
               onClearButtonPressed: _controller.clearSearchQuery,
               onSearchQueryChanged: _controller.updateSearchQuery,
+              hintText: hintText,
             ));
   }
 }
