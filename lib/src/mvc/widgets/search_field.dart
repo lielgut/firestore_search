@@ -1,3 +1,4 @@
+import 'package:firestore_search/globals/searchbar_icons.dart';
 import 'package:flutter/material.dart';
 
 class SearchFiled extends StatelessWidget {
@@ -67,7 +68,7 @@ class SearchFiled extends StatelessWidget {
               hintStyle: TextStyle(color: searchTextHintColor),
               prefixIcon: searchQueryController!.text.isEmpty ?  IconButton(
                 alignment: Alignment.centerRight,
-                icon: const Icon(Icons.search,color: Color(0xff4D20D3),),
+                icon: const Icon(Searchbar.search,color: Color(0xff4D20D3),),
                 onPressed: onClearButtonPressed!,
                 )
                   : const SizedBox(
@@ -84,7 +85,7 @@ class SearchFiled extends StatelessWidget {
                   : IconButton(
                 alignment: Alignment.centerRight,
                 color: clearSearchButtonColor,
-                icon: const Icon(Icons.keyboard_voice_outlined),
+                icon: const Icon(Searchbar.microphone,color: Color(0xFF8B00),),
                 onPressed: (){} ,//TODO
               ),
             ),

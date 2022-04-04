@@ -30,6 +30,10 @@ flutter:
   assets:
     - assets/images/
 
+  fonts:
+    - family: StudiezIcons
+      fonts:
+        - asset: assets/fonts/Searchbar.ttf
   # To add assets to your package, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
