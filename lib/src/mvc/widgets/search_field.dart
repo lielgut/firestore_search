@@ -74,7 +74,7 @@ class SearchFiled extends StatelessWidget {
             focusNode: searchFocusNode,
             decoration: InputDecoration(
               isDense: true,
-              contentPadding: EdgeInsets.symmetric(vertical: 15.8),
+              contentPadding: EdgeInsets.symmetric(horizontal: 15.8),
               hintText: hintText == null ? "Search..." : hintText,
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(14.0),
