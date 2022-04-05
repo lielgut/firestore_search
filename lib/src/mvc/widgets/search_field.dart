@@ -85,7 +85,7 @@ class SearchFiled extends StatelessWidget {
                   : IconButton(
                 alignment: Alignment.centerRight,
                 color: clearSearchButtonColor,
-                icon: const Icon(Searchbar.microphone,),
+                icon: const Icon(Searchbar.microphone,color: Color(0xffFF8B00),),
                 onPressed: (){} ,//TODO
               ),
             ),
