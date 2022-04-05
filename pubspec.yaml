@@ -31,7 +31,7 @@ flutter:
     - assets/images/
 
   fonts:
-    - family:  Searchbar
+    - family: Searchbar
       fonts:
         - asset: fonts/Searchbar.ttf
   # To add assets to your package, add an assets section, like this:
