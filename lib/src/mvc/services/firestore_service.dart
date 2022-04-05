@@ -36,7 +36,7 @@ class FirestoreService<T> {
       return collectionReference
           .orderBy('$searchBy', descending: false)
           .where('$searchBy', isGreaterThanOrEqualTo: query)
-      .where('$searchBy', isLessThan: query + '	\u05eb')
+      .where('$searchBy', isLessThan: query + '\u05eb')
           .limit(limitOfRetrievedData!)
           .snapshots()
           .map(dataListFromSnapshot!);
