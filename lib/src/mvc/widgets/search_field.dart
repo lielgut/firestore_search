@@ -86,7 +86,7 @@ class SearchFiled extends StatelessWidget {
               prefixIcon: searchQueryController!.text.isEmpty
                   ? IconButton(
                       alignment: Alignment.centerRight,
-                      icon: Image.asset('assets/icons/search.png'),
+                      icon: Image.asset('assets/ui/icons/search.png'),
                       onPressed: onClearButtonPressed!,
                     )
                   : const SizedBox(
@@ -102,7 +102,7 @@ class SearchFiled extends StatelessWidget {
                     )
                   : IconButton(
                       alignment: Alignment.centerRight,
-                      icon: Image.asset('assets/icons/microphone.png'),
+                      icon: Image.asset('assets/ui/icons/microphone.png'),
                       onPressed: () {}, //TODO
                     ),
             ),
