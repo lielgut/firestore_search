@@ -86,8 +86,9 @@ class SearchFiled extends StatelessWidget {
               prefixIcon: searchQueryController!.text.isEmpty
                   ? IconButton(
                       alignment: Alignment.centerRight,
-                      icon: Image.asset('assets/ui/icons/search.png'),
+                      icon: Image.asset('assets/ui/icons/search.png',width:16.4 ,height: 16.55,),
                       onPressed: onClearButtonPressed!,
+
                     )
                   : const SizedBox(
                       height: 0.0,
@@ -97,12 +98,12 @@ class SearchFiled extends StatelessWidget {
                   ? IconButton(
                       alignment: Alignment.centerRight,
                       color: clearSearchButtonColor,
-                      icon: const Icon(StudiezIcons.delete),
+                      icon: const Icon(Icons.close_rounded),
                       onPressed: onClearButtonPressed!,
                     )
                   : IconButton(
                       alignment: Alignment.centerRight,
-                      icon: Image.asset('assets/ui/icons/microphone.png'),
+                      icon: Image.asset('assets/ui/icons/microphone.png',width: 14.58,height:20.88 ,),
                       onPressed: () {}, //TODO
                     ),
             ),
