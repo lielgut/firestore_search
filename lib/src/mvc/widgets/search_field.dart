@@ -1,4 +1,5 @@
 import 'package:firestore_search/globals/searchbar_icons.dart';
+import 'package:firestore_search/globals/studiez_icons.dart';
 import 'package:flutter/material.dart';
 
 class SearchFiled extends StatelessWidget {
@@ -99,7 +100,7 @@ class SearchFiled extends StatelessWidget {
                   ? IconButton(
                       alignment: Alignment.centerRight,
                       color: clearSearchButtonColor,
-                      icon: const Icon(Icons.clear),
+                      icon: const Icon(StudiezIcons.delete),
                       onPressed: onClearButtonPressed!,
                     )
                   : IconButton(
