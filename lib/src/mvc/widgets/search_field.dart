@@ -1,5 +1,3 @@
-import 'package:firestore_search/globals/searchbar_icons.dart';
-import 'package:firestore_search/globals/studiez_icons.dart';
 import 'package:flutter/material.dart';
 
 class SearchFiled extends StatelessWidget {
@@ -75,7 +73,7 @@ class SearchFiled extends StatelessWidget {
             focusNode: searchFocusNode,
             decoration: InputDecoration(
               isDense: true,
-              contentPadding: EdgeInsets.symmetric(horizontal: 15.8),
+              contentPadding: EdgeInsets.zero,
               hintText: hintText == null ? "Search..." : hintText,
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(14.0),
