@@ -40,15 +40,17 @@ class SearchFiled extends StatelessWidget {
     return Stack(alignment: AlignmentDirectional.topCenter, children: [
       Center(
           child: Container(
-              child: isSearchTeacher! ? Image.asset(
-        'assets/ui/images/thinking_woman_purple_bg.png',
-        width: 328,
-        height: 216,
-      ): Image.asset(
-                'assets/ui/images/woman_purple_bg.png',
-                width: 328,
-                height: 216,
-              ) )),
+              child: isSearchTeacher!
+                  ? Image.asset(
+                      'assets/ui/images/woman_purple_bg.png',
+                      // width: 328,
+                      // height: 216,
+                    )
+                  : Image.asset(
+                      'assets/ui/images/thinking_woman_purple_bg.png',
+                      width: 328,
+                      height: 216,
+                    ))),
       Positioned(
         top: 12,
         child: Container(
