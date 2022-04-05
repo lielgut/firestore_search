@@ -43,12 +43,12 @@ class SearchFiled extends StatelessWidget {
           child: Container(
               child: isSearchTeacher!
                   ? Image.asset(
-                      'assets/images/woman_purple_bg.png',
+                      'assets/ui/images/woman_purple_bg.png',
                       // width: 328,
                       // height: 216,
                     )
                   : Image.asset(
-                      'assets/images/thinking_woman_purple_bg.png',
+                      'assets/ui/images/thinking_woman_purple_bg.png',
                       width: 328,
                       height: 216,
                     ))),
