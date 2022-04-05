@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 class SearchFiled extends StatelessWidget {
   final bool? showSearchIcon;
   final bool? isSearching;
+  final bool? isSearchTeacher;
   final Color? searchBackgroundColor;
   final Color? searchTextHintColor;
   final Color? clearSearchButtonColor;
@@ -15,9 +16,11 @@ class SearchFiled extends StatelessWidget {
   final Function(String)? onEditingComplete;
   final String? hintText;
   TextEditingController? searchQueryController;
+
   SearchFiled(
       {this.showSearchIcon = false,
       this.isSearching = false,
+      this.isSearchTeacher,
       this.searchBackgroundColor,
       this.searchTextColor,
       this.searchTextHintColor,
@@ -28,24 +31,33 @@ class SearchFiled extends StatelessWidget {
       this.onSearchQueryChanged,
       this.onSearchQueryUpdated,
       this.onEditingComplete,
-        this.hintText,
+      this.hintText,
       Key? key})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      alignment: AlignmentDirectional.topCenter,
-      children:[
-        Center(child: Container(child: Image.asset('assets/ui/images/thinking_woman_purple_bg.png',width: 328,height: 216,))),
-        Positioned(
-          top: 12,
+    return Stack(alignment: AlignmentDirectional.topCenter, children: [
+      Center(
           child: Container(
+              child: isSearchTeacher! ? Image.asset(
+        'assets/ui/images/thinking_woman_purple_bg.png',
+        width: 328,
+        height: 216,
+      ): Image.asset(
+                'assets/ui/images/woman_purple_bg.png',
+                width: 328,
+                height: 216,
+              ) )),
+      Positioned(
+        top: 12,
+        child: Container(
           alignment: Alignment.center,
           height: 42.0,
           width: 304,
           margin: showSearchIcon!
-              ? const EdgeInsets.only(bottom: 3.5, top: 3.5, right: 2.0, left: 2.0)
+              ? const EdgeInsets.only(
+                  bottom: 3.5, top: 3.5, right: 2.0, left: 2.0)
               : isSearching!
                   ? const EdgeInsets.only(bottom: 3.5, top: 3.5, right: 10.0)
                   : const EdgeInsets.only(
@@ -59,22 +71,26 @@ class SearchFiled extends StatelessWidget {
             controller: searchQueryController,
             focusNode: searchFocusNode,
             decoration: InputDecoration(
-              hintText: hintText == null ? "Search...":hintText,
+              hintText: hintText == null ? "Search..." : hintText,
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(14.0),
               ),
               enabledBorder: InputBorder.none,
               focusedBorder: InputBorder.none,
               hintStyle: TextStyle(color: searchTextHintColor),
-              prefixIcon: searchQueryController!.text.isEmpty ?  IconButton(
-                alignment: Alignment.centerRight,
-                icon: const Icon(Searchbar.search,color: Color(0xff4D20D3),),
-                onPressed: onClearButtonPressed!,
-                )
+              prefixIcon: searchQueryController!.text.isEmpty
+                  ? IconButton(
+                      alignment: Alignment.centerRight,
+                      icon: const Icon(
+                        Searchbar.search,
+                        color: Color(0xff4D20D3),
+                      ),
+                      onPressed: onClearButtonPressed!,
+                    )
                   : const SizedBox(
-              height: 0.0,
-              width: 0.0,
-              ),
+                      height: 0.0,
+                      width: 0.0,
+                    ),
               suffixIcon: searchQueryController!.text.isNotEmpty
                   ? IconButton(
                       alignment: Alignment.centerRight,
@@ -83,11 +99,14 @@ class SearchFiled extends StatelessWidget {
                       onPressed: onClearButtonPressed!,
                     )
                   : IconButton(
-                alignment: Alignment.centerRight,
-                color: clearSearchButtonColor,
-                icon: const Icon(Searchbar.microphone,color: Color(0xffFF8B00),),
-                onPressed: (){} ,//TODO
-              ),
+                      alignment: Alignment.centerRight,
+                      color: clearSearchButtonColor,
+                      icon: const Icon(
+                        Searchbar.microphone,
+                        color: Color(0xffFF8B00),
+                      ),
+                      onPressed: () {}, //TODO
+                    ),
             ),
             textAlignVertical: TextAlignVertical.center,
             textInputAction: TextInputAction.search,
@@ -96,8 +115,8 @@ class SearchFiled extends StatelessWidget {
             // onSubmitted: (query) => onSearchQueryUpdated!(query),
             // onEditingComplete: () => onEditingComplete!,
           ),
+        ),
       ),
-        ),]
-    );
+    ]);
   }
 }
