@@ -73,6 +73,8 @@ class SearchFiled extends StatelessWidget {
             controller: searchQueryController,
             focusNode: searchFocusNode,
             decoration: InputDecoration(
+              isDense: true,
+              contentPadding: EdgeInsets.symmetric(vertical: 15.8),
               hintText: hintText == null ? "Search..." : hintText,
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(14.0),
