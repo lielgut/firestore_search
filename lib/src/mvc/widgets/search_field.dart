@@ -43,12 +43,12 @@ class SearchFiled extends StatelessWidget {
           child: Container(
               child: isSearchTeacher!
                   ? Image.asset(
-                      'assets/ui/images/woman_purple_bg.png',
+                      'assets/images/woman_purple_bg.png',
                       // width: 328,
                       // height: 216,
                     )
                   : Image.asset(
-                      'assets/ui/images/thinking_woman_purple_bg.png',
+                      'assets/images/thinking_woman_purple_bg.png',
                       width: 328,
                       height: 216,
                     ))),
@@ -86,10 +86,7 @@ class SearchFiled extends StatelessWidget {
               prefixIcon: searchQueryController!.text.isEmpty
                   ? IconButton(
                       alignment: Alignment.centerRight,
-                      icon: const Icon(
-                        Searchbar.search,
-                        color: Color(0xff4D20D3),
-                      ),
+                      icon: Image.asset('assets/icons/search'),
                       onPressed: onClearButtonPressed!,
                     )
                   : const SizedBox(
@@ -105,11 +102,7 @@ class SearchFiled extends StatelessWidget {
                     )
                   : IconButton(
                       alignment: Alignment.centerRight,
-                      color: clearSearchButtonColor,
-                      icon: const Icon(
-                        Searchbar.microphone,
-                        color: Color(0xffFF8B00),
-                      ),
+                      icon: Image.asset('assets/icons/microphone'),
                       onPressed: () {}, //TODO
                     ),
             ),

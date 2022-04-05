@@ -29,6 +29,7 @@ false_secrets:
 flutter:
   assets:
     - assets/images/
+    - assets/icons/
 
   fonts:
     - family: Searchbar
