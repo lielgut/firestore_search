@@ -81,8 +81,9 @@ class SearchFiled extends StatelessWidget {
               enabledBorder: InputBorder.none,
               focusedBorder: InputBorder.none,
               hintStyle: TextStyle(color: searchTextHintColor),
-              prefix: searchQueryController!.text.isEmpty
+              prefixIcon: searchQueryController!.text.isEmpty
                   ? IconButton(
+                padding: EdgeInsets.zero,
                       alignment: Alignment.centerRight,
                       icon: Image.asset('assets/ui/icons/search.png',width:16.4 ,height: 16.55,),
                       onPressed: onClearButtonPressed!,
@@ -94,13 +95,17 @@ class SearchFiled extends StatelessWidget {
                     ),
               suffixIcon: searchQueryController!.text.isNotEmpty
                   ? IconButton(
-                      alignment: Alignment.centerRight,
+                padding: EdgeInsets.zero,
+
+                alignment: Alignment.centerRight,
                       color: clearSearchButtonColor,
                       icon: const Icon(Icons.close_rounded),
                       onPressed: onClearButtonPressed!,
                     )
                   : IconButton(
-                      alignment: Alignment.centerRight,
+                padding: EdgeInsets.zero,
+
+                alignment: Alignment.centerRight,
                       icon: Image.asset('assets/ui/icons/microphone.png',width: 14.58,height:20.88 ,),
                       onPressed: () {}, //TODO
                     ),
