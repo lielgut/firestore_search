@@ -83,11 +83,15 @@ class SearchFiled extends StatelessWidget {
               hintStyle: TextStyle(color: searchTextHintColor),
               prefixIcon: searchQueryController!.text.isEmpty
                   ? IconButton(
-                padding: EdgeInsetsDirectional.only(start: 15.8),
+                      padding: EdgeInsetsDirectional.only(start: 15.8),
+                      constraints: BoxConstraints(),
                       alignment: Alignment.centerRight,
-                      icon: Image.asset('assets/ui/icons/search.png',width:16.4 ,height: 16.55,),
+                      icon: Image.asset(
+                        'assets/ui/icons/search.png',
+                        width: 16.4,
+                        height: 16.55,
+                      ),
                       onPressed: onClearButtonPressed!,
-
                     )
                   : const SizedBox(
                       height: 0.0,
@@ -95,18 +99,22 @@ class SearchFiled extends StatelessWidget {
                     ),
               suffixIcon: searchQueryController!.text.isNotEmpty
                   ? IconButton(
-                padding:EdgeInsetsDirectional.only(start: 16.29),
-
-                alignment: Alignment.centerRight,
+                      padding: EdgeInsetsDirectional.only(start: 16.29),
+                      constraints: BoxConstraints(),
+                      alignment: Alignment.centerRight,
                       color: clearSearchButtonColor,
                       icon: const Icon(Icons.close_rounded),
                       onPressed: onClearButtonPressed!,
                     )
                   : IconButton(
-                padding: EdgeInsetsDirectional.only(start: 16.29),
-
-                alignment: Alignment.centerRight,
-                      icon: Image.asset('assets/ui/icons/microphone.png',width: 14.58,height:20.88 ,),
+                      padding: EdgeInsetsDirectional.only(start: 16.29),
+                      constraints: BoxConstraints(),
+                      alignment: Alignment.centerRight,
+                      icon: Image.asset(
+                        'assets/ui/icons/microphone.png',
+                        width: 14.58,
+                        height: 20.88,
+                      ),
                       onPressed: () {}, //TODO
                     ),
             ),
