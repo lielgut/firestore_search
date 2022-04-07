@@ -81,7 +81,7 @@ class SearchFiled extends StatelessWidget {
               enabledBorder: InputBorder.none,
               focusedBorder: InputBorder.none,
               hintStyle: TextStyle(color: searchTextHintColor),
-              prefixIcon: searchQueryController!.text.isEmpty
+              prefix: searchQueryController!.text.isEmpty
                   ? IconButton(
                       alignment: Alignment.centerRight,
                       icon: Image.asset('assets/ui/icons/search.png',width:16.4 ,height: 16.55,),
