@@ -88,8 +88,8 @@ class SearchFiled extends StatelessWidget {
                       alignment: Alignment.centerRight,
                       icon: Image.asset(
                         'assets/ui/icons/search.png',
-                        width: 16.4,
-                        height: 16.55,
+                        // width: 16.4,
+                        // height: 16.55,
                       ),
                       onPressed: onClearButtonPressed!,
                     )
@@ -112,8 +112,8 @@ class SearchFiled extends StatelessWidget {
                       alignment: Alignment.centerRight,
                       icon: Image.asset(
                         'assets/ui/icons/microphone.png',
-                        width: 14.58,
-                        height: 20.88,
+                        // width: 14.58,
+                        // height: 20.88,
                       ),
                       onPressed: () {}, //TODO
                     ),
