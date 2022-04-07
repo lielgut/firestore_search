@@ -98,24 +98,24 @@ class SearchFiled extends StatelessWidget {
                       width: 0.0,
                     ),
               suffixIcon: searchQueryController!.text.isNotEmpty
-                  ? IconButton(
-                      padding: EdgeInsetsDirectional.only(start: 16.29),
+                  ? GestureDetector(
+                      /*padding: EdgeInsetsDirectional.only(start: 16.29),
                       constraints: BoxConstraints(),
                       alignment: Alignment.centerRight,
-                      color: clearSearchButtonColor,
-                      icon: const Icon(Icons.close_rounded),
-                      onPressed: onClearButtonPressed!,
+                      color: clearSearchButtonColor,*/
+                      child: const Icon(Icons.close_rounded),
+                      onTap: onClearButtonPressed!,
                     )
-                  : IconButton(
-                      padding: EdgeInsetsDirectional.only(start: 16.29),
+                  : GestureDetector(
+                      /*padding: EdgeInsetsDirectional.only(start: 16.29),
                       constraints: BoxConstraints(),
-                      alignment: Alignment.centerRight,
-                      icon: Image.asset(
+                      alignment: Alignment.centerRight,*/
+                      child: Image.asset(
                         'assets/ui/icons/microphone.png',
                         width: 14.58,
                         height: 20.88,
                       ),
-                      onPressed: () {}, //TODO
+                      onTap: () {}, //TODO
                     ),
             ),
             textAlignVertical: TextAlignVertical.center,
