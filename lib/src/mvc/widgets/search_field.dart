@@ -86,11 +86,11 @@ class SearchFiled extends StatelessWidget {
                      /* padding: EdgeInsetsDirectional.only(start: 15.8),
                       constraints: BoxConstraints(),
                       alignment: Alignment.centerRight,*/
-                      child: Image.asset(
+                      child: ImageIcon(AssetImage('assets/ui/icons/search.png'),color: Color(0xff4D20D3),size: 8,)/*Image.asset(
                         'assets/ui/icons/search.png',
                         width: 16.4,
                         height: 16.55,
-                      ),
+                      )*/,
                       onTap: onClearButtonPressed!,
                     )
                   : const SizedBox(
@@ -110,7 +110,7 @@ class SearchFiled extends StatelessWidget {
                       /*padding: EdgeInsetsDirectional.only(start: 16.29),
                       constraints: BoxConstraints(),
                       alignment: Alignment.centerRight,*/
-                      child: ImageIcon(AssetImage('assets/ui/icons/microphone.png'),color: Color(0xffFF8B00),)/*Image.asset(
+                      child: ImageIcon(AssetImage('assets/ui/icons/microphone.png'),color: Color(0xffFF8B00),size:15)/*Image.asset(
                         ,
                         width: 14.58,
                         height: 20.88,
