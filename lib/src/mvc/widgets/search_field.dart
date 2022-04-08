@@ -110,11 +110,11 @@ class SearchFiled extends StatelessWidget {
                       /*padding: EdgeInsetsDirectional.only(start: 16.29),
                       constraints: BoxConstraints(),
                       alignment: Alignment.centerRight,*/
-                      child: Image.asset(
-                        'assets/ui/icons/microphone.png',
+                      child: ImageIcon(AssetImage('assets/ui/icons/microphone.png'),color: Color(0xffFF8B00),)/*Image.asset(
+                        ,
                         width: 14.58,
                         height: 20.88,
-                      ),
+                      )*/,
                       onTap: () {}, //TODO
                     ),
             ),
