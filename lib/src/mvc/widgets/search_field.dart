@@ -82,16 +82,16 @@ class SearchFiled extends StatelessWidget {
               focusedBorder: InputBorder.none,
               hintStyle: TextStyle(color: searchTextHintColor),
               prefixIcon: searchQueryController!.text.isEmpty
-                  ? GestureDetector(
+                  ? IconButton(
                       /*padding: EdgeInsetsDirectional.only(start: 15.8),
                       constraints: BoxConstraints(),
                       alignment: Alignment.centerRight,*/
-                      child: Image.asset(
+                      icon: Image.asset(
                         'assets/ui/icons/search.png',
                         width: 16.4,
                         height: 16.55,
                       ),
-                      onTap: onClearButtonPressed!,
+                      onPressed: onClearButtonPressed!,
                     )
                   : const SizedBox(
                       height: 0.0,
