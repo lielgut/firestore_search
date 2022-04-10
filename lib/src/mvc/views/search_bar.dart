@@ -31,17 +31,10 @@ class FirestoreSearchBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    late FocusNode searchFocusNode;
-
     Get.put(FirestoreSearchController(), tag: tag);
     return GetBuilder<FirestoreSearchController>(
-      initState: (GetBuilderState<FirestoreSearchController> builderState){
-        searchFocusNode = FocusNode();},
-        dispose: (GetBuilderState<FirestoreSearchController> builderState){
-          searchFocusNode.dispose();},
         tag: tag,
         builder: (_controller) => SearchFiled(
-              searchFocusNode: searchFocusNode,
               searchQueryController: _controller.searchQueryController.value,
               isSearching: _controller.isSearching.value,
               showSearchIcon: showSearchIcon,
