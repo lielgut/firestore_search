@@ -110,7 +110,7 @@ class SearchFiled extends StatelessWidget {
                       /*padding: EdgeInsetsDirectional.only(start: 16.29),
                       constraints: BoxConstraints(),
                       alignment: Alignment.centerRight,*/
-                      child:  Image.asset('assets/ui/icons/microphone.png',width: 16.4,height: 16.55,)/*Image.asset(
+                      child:  Container(child: Image.asset('assets/ui/icons/microphone.png',width: 16.4,height: 16.55,),width: 0,height:0,)/*Image.asset(
                         ,
                         width: 14.58,
                         height: 20.88,
