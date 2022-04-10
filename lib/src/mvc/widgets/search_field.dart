@@ -8,7 +8,7 @@ class SearchFiled extends StatefulWidget {
   final Color? searchTextHintColor;
   final Color? clearSearchButtonColor;
   final Color? searchTextColor;
-  late final FocusNode? searchFocusNode;
+  final FocusNode? searchFocusNode;
   final Function()? onClearButtonPressed;
   final Function(String)? onSearchQueryChanged;
   final Function(String)? onSearchQueryUpdated;
@@ -39,16 +39,17 @@ class SearchFiled extends StatefulWidget {
 }
 
 class _SearchFiledState extends State<SearchFiled> {
+  late FocusNode searchFocusNode;
 
   @override
   void initState() {
     super.initState();
-    widget.searchFocusNode = FocusNode();
+    searchFocusNode = FocusNode();
   }
 
   @override
   void dispose() {
-    widget.searchFocusNode?.dispose();
+    searchFocusNode.dispose();
     super.dispose();
   }
   @override
@@ -87,7 +88,7 @@ class _SearchFiledState extends State<SearchFiled> {
           ),
           child: TextField(
             controller: widget.searchQueryController,
-            focusNode: widget.searchFocusNode,
+            focusNode: searchFocusNode,
             decoration: InputDecoration(
               isDense: true,
               contentPadding: EdgeInsets.zero,
