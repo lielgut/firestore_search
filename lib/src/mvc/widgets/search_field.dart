@@ -60,8 +60,6 @@ class _SearchFiledState extends State<SearchFiled> {
               child: widget.isSearchTeacher!
                   ? Image.asset(
                       'assets/ui/images/woman_purple_bg.png',
-                      // width: 328,
-                      // height: 216,
                     )
                   : Image.asset(
                       'assets/ui/images/thinking_woman_purple_bg.png',
@@ -74,14 +72,6 @@ class _SearchFiledState extends State<SearchFiled> {
           alignment: Alignment.center,
           height: 42.0,
           width: 304,
-          /*margin: showSearchIcon!
-              ? const EdgeInsets.only(
-                  bottom: 3.5, top: 3.5, right: 2.0, left: 2.0)
-              : isSearching!
-                  ? const EdgeInsets.only(bottom: 3.5, top: 3.5, right: 10.0)
-                  : const EdgeInsets.only(
-                      bottom: 3.5, top: 3.5, right: 10.0, left: 10.0),*/
-          // padding: const EdgeInsets.symmetric(horizontal: 8.0),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(14.0),
             color: widget.searchBackgroundColor ?? Colors.blueGrey.withOpacity(.2),
@@ -100,30 +90,20 @@ class _SearchFiledState extends State<SearchFiled> {
               focusedBorder: InputBorder.none,
               hintStyle: TextStyle(color: widget.searchTextHintColor),
               prefixIcon: IconButton(
-                      /*padding: EdgeInsetsDirectional.only(start: 15.8),
-                      constraints: BoxConstraints(),
-                      alignment: Alignment.centerRight,*/
                       icon: Image.asset(
                         'assets/ui/icons/search.png',
                         width: 16.4,
                         height: 16.55,
                       ),
-                      onPressed: ()=>searchFocusNode?.requestFocus(),
+                      onPressed: ()=>searchFocusNode.requestFocus(),
                     )
                  ,
               suffixIcon: widget.searchQueryController!.text.isNotEmpty
                   ? GestureDetector(
-                      /*padding: EdgeInsetsDirectional.only(start: 16.29),
-                      constraints: BoxConstraints(),
-                      alignment: Alignment.centerRight,
-                      color: clearSearchButtonColor,*/
                       child: const Icon(Icons.close_rounded),
                       onTap: widget.onClearButtonPressed!,
                     )
                   : IconButton(
-                      /*padding: EdgeInsetsDirectional.only(start: 16.29),
-                      constraints: BoxConstraints(),
-                      alignment: Alignment.centerRight,*/
                       icon: Image.asset(
                         'assets/ui/icons/microphone.png',
                         width: 14.58,
