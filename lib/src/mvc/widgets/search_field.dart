@@ -108,7 +108,7 @@ class _SearchFiledState extends State<SearchFiled> {
                         width: 16.4,
                         height: 16.55,
                       ),
-                      onPressed: ()=>widget.searchFocusNode?.requestFocus(),
+                      onPressed: ()=>searchFocusNode?.requestFocus(),
                     )
                  ,
               suffixIcon: widget.searchQueryController!.text.isNotEmpty
