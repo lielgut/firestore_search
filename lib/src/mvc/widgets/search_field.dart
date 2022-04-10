@@ -90,7 +90,7 @@ class SearchFiled extends StatelessWidget {
                         width: 16.4,
                         height: 16.55,
                       ),
-                      onPressed: onClearButtonPressed!,
+                      onPressed: ()=>searchFocusNode?.requestFocus(),
                     )
                  ,
               suffixIcon: searchQueryController!.text.isNotEmpty
