@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class SearchFiled extends StatelessWidget {
+class SearchFiled extends StatefulWidget {
   final bool? showSearchIcon;
   final bool? isSearching;
   final bool? isSearchTeacher;
@@ -8,7 +8,7 @@ class SearchFiled extends StatelessWidget {
   final Color? searchTextHintColor;
   final Color? clearSearchButtonColor;
   final Color? searchTextColor;
-  final FocusNode? searchFocusNode;
+  late final FocusNode? searchFocusNode;
   final Function()? onClearButtonPressed;
   final Function(String)? onSearchQueryChanged;
   final Function(String)? onSearchQueryUpdated;
@@ -35,11 +35,28 @@ class SearchFiled extends StatelessWidget {
       : super(key: key);
 
   @override
+  State<SearchFiled> createState() => _SearchFiledState();
+}
+
+class _SearchFiledState extends State<SearchFiled> {
+
+  @override
+  void initState() {
+    super.initState();
+    widget.searchFocusNode = FocusNode();
+  }
+
+  @override
+  void dispose() {
+    widget.searchFocusNode?.dispose();
+    super.dispose();
+  }
+  @override
   Widget build(BuildContext context) {
     return Stack(alignment: AlignmentDirectional.topCenter, children: [
       Center(
           child: Container(
-              child: isSearchTeacher!
+              child: widget.isSearchTeacher!
                   ? Image.asset(
                       'assets/ui/images/woman_purple_bg.png',
                       // width: 328,
@@ -66,21 +83,21 @@ class SearchFiled extends StatelessWidget {
           // padding: const EdgeInsets.symmetric(horizontal: 8.0),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(14.0),
-            color: searchBackgroundColor ?? Colors.blueGrey.withOpacity(.2),
+            color: widget.searchBackgroundColor ?? Colors.blueGrey.withOpacity(.2),
           ),
           child: TextField(
-            controller: searchQueryController,
-            focusNode: searchFocusNode,
+            controller: widget.searchQueryController,
+            focusNode: widget.searchFocusNode,
             decoration: InputDecoration(
               isDense: true,
               contentPadding: EdgeInsets.zero,
-              hintText: hintText == null ? "Search..." : hintText,
+              hintText: widget.hintText == null ? "Search..." : widget.hintText,
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(14.0),
               ),
               enabledBorder: InputBorder.none,
               focusedBorder: InputBorder.none,
-              hintStyle: TextStyle(color: searchTextHintColor),
+              hintStyle: TextStyle(color: widget.searchTextHintColor),
               prefixIcon: IconButton(
                       /*padding: EdgeInsetsDirectional.only(start: 15.8),
                       constraints: BoxConstraints(),
@@ -90,17 +107,17 @@ class SearchFiled extends StatelessWidget {
                         width: 16.4,
                         height: 16.55,
                       ),
-                      onPressed: ()=>searchFocusNode?.requestFocus(),
+                      onPressed: ()=>widget.searchFocusNode?.requestFocus(),
                     )
                  ,
-              suffixIcon: searchQueryController!.text.isNotEmpty
+              suffixIcon: widget.searchQueryController!.text.isNotEmpty
                   ? GestureDetector(
                       /*padding: EdgeInsetsDirectional.only(start: 16.29),
                       constraints: BoxConstraints(),
                       alignment: Alignment.centerRight,
                       color: clearSearchButtonColor,*/
                       child: const Icon(Icons.close_rounded),
-                      onTap: onClearButtonPressed!,
+                      onTap: widget.onClearButtonPressed!,
                     )
                   : IconButton(
                       /*padding: EdgeInsetsDirectional.only(start: 16.29),
@@ -116,8 +133,8 @@ class SearchFiled extends StatelessWidget {
             ),
             textAlignVertical: TextAlignVertical.center,
             textInputAction: TextInputAction.search,
-            style: TextStyle(color: searchTextColor, fontSize: 16.0),
-            onChanged: (query) => onSearchQueryChanged!(query),
+            style: TextStyle(color: widget.searchTextColor, fontSize: 16.0),
+            onChanged: (query) => widget.onSearchQueryChanged!(query),
             // onSubmitted: (query) => onSearchQueryUpdated!(query),
             // onEditingComplete: () => onEditingComplete!,
           ),
