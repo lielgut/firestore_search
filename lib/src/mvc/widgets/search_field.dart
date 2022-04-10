@@ -106,16 +106,16 @@ class SearchFiled extends StatelessWidget {
                       child: const Icon(Icons.close_rounded),
                       onTap: onClearButtonPressed!,
                     )
-                  : GestureDetector(
+                  : IconButton(
                       /*padding: EdgeInsetsDirectional.only(start: 16.29),
                       constraints: BoxConstraints(),
                       alignment: Alignment.centerRight,*/
-                      child:  Container(child: Image.asset('assets/ui/icons/microphone.png',width: 16.4,height: 16.55,),width: 0,height:0,)/*Image.asset(
-                        ,
+                      icon: Image.asset(
+                        'assets/ui/icons/microphone.png',
                         width: 14.58,
                         height: 20.88,
-                      )*/,
-                      onTap: () {}, //TODO
+                      ),
+                      onPressed: () {}, //TODO
                     ),
             ),
             textAlignVertical: TextAlignVertical.center,
