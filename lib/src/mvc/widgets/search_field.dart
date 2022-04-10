@@ -83,14 +83,14 @@ class SearchFiled extends StatelessWidget {
               hintStyle: TextStyle(color: searchTextHintColor),
               prefixIcon: searchQueryController!.text.isEmpty
                   ? GestureDetector(
-                     /* padding: EdgeInsetsDirectional.only(start: 15.8),
+                      /*padding: EdgeInsetsDirectional.only(start: 15.8),
                       constraints: BoxConstraints(),
                       alignment: Alignment.centerRight,*/
-                      child: Container(child: ImageIcon(AssetImage('assets/ui/icons/search.png'),color: Color(0xff4D20D3),),width: 16.4,height: 16.55,)/*Image.asset(
+                      child: Image.asset(
                         'assets/ui/icons/search.png',
                         width: 16.4,
                         height: 16.55,
-                      )*/,
+                      ),
                       onTap: onClearButtonPressed!,
                     )
                   : const SizedBox(
@@ -110,7 +110,7 @@ class SearchFiled extends StatelessWidget {
                       /*padding: EdgeInsetsDirectional.only(start: 16.29),
                       constraints: BoxConstraints(),
                       alignment: Alignment.centerRight,*/
-                      child: Container(child: ImageIcon(AssetImage('assets/ui/icons/microphone.png'),color: Color(0xffFF8B00),),width: 14.58,height: 20.88,)/*Image.asset(
+                      child:  Image.asset('assets/ui/icons/microphone.png',width: 16.4,height: 16.55,)/*Image.asset(
                         ,
                         width: 14.58,
                         height: 20.88,
