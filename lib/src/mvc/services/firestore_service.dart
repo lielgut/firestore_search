@@ -32,7 +32,6 @@ class FirestoreService<T> {
     //fix for hebrew
     if (query.isEmpty) {
       return collectionReference
-          .orderBy('$searchBy', descending: false)
           .limit(limitOfRetrievedData!)
           .snapshots()
           .map(dataListFromSnapshot!);
