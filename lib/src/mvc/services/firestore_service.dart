@@ -31,6 +31,7 @@ class FirestoreService<T> {
             .map(dataListFromSnapshot!);*/
     //fix for hebrew
     if (query.isEmpty) {
+      print("empty");
       return collectionReference
           .limit(limitOfRetrievedData!)
           .snapshots()
