@@ -17,7 +17,6 @@ class FirestoreService<T> {
   final FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
 
   Stream<List> searchData(String query) {
-    Stream<List> stream;
     ///check if hebrew
     RegExp regExp = RegExp("[ -&(-+\-/-9=?-@^{}\u0590-\u05fe]", unicode: true);
     var isHebrew = regExp.hasMatch(query);
