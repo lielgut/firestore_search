@@ -67,9 +67,9 @@ class FirestoreSearchResults extends StatelessWidget {
           return Stack(
             children: [
               initialBody ?? SizedBox(),
-              _controller.searchQuery.isEmpty
+             /* _controller.searchQuery.isEmpty
                   ? SizedBox()
-                  : Container(
+                  : */Container(
                       color: resultsBodyBackgroundColor,
                       child: StreamBuilder<List>(
                           stream: FirestoreService(
