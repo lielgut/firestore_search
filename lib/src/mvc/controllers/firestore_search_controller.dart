@@ -7,6 +7,7 @@ class FirestoreSearchController extends GetxController {
   Rx<TextEditingController> searchQueryController = TextEditingController().obs;
 
   void updateSearchQuery(String newQuery) {
+    if (searchQuery.value == newQuery) return;
     searchQuery.value = newQuery;
     update();
   }
