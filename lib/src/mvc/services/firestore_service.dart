@@ -21,17 +21,8 @@ class FirestoreService<T> {
     RegExp regExp = RegExp("[ -&(-+\-/-9=?-@^{}\u0590-\u05fe]", unicode: true);
     var isHebrew = regExp.hasMatch(query);
     final collectionReference = firebaseFirestore.collection(collectionName!);
-    /* return query.isEmpty ? Stream.empty()
-        : stream = collectionReference
-            .orderBy('$searchBy', descending: false)
-            .where('$searchBy', isGreaterThanOrEqualTo: query)
-            .where('$searchBy', isLessThan: query + 'z')
-            .limit(limitOfRetrievedData!)
-            .snapshots()
-            .map(dataListFromSnapshot!);*/
     //fix for hebrew
     if (query.isEmpty) {
-      print("empty");
       return collectionReference
           .limit(limitOfRetrievedData!)
           .snapshots()
