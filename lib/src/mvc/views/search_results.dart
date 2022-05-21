@@ -77,7 +77,7 @@ class FirestoreSearchResults extends StatelessWidget {
                                   searchBy: searchBy ?? '',
                                   dataListFromSnapshot: dataListFromSnapshot,
                                   limitOfRetrievedData: limitOfRetrievedData)
-                              .searchData(_controller.searchQuery.value),
+                              .searchDataAlgorithm(_controller.searchQuery.value),
                           builder: builder!),
                     )
             ],

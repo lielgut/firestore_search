@@ -197,7 +197,7 @@ class _FirestoreSearchScaffoldState extends State<FirestoreSearchScaffold> {
                                     widget.dataListFromSnapshot,
                                 limitOfRetrievedData:
                                     widget.limitOfRetrievedData)
-                            .searchData(searchQuery),
+                            .searchDataAlgorithm(searchQuery),
                         builder: widget.builder!),
               )
           ],
