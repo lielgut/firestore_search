@@ -25,8 +25,10 @@ class FirestoreService<T> {
     if (collectionName == "users") {
       print("######## user search ############");
       if (query.isEmpty) {
+        print("######## empty string ############");
+
         return collectionReference
-            .where('type', isEqualTo: 0)
+            // .where('type', isEqualTo: 0)
             .limit(limitOfRetrievedData!)
             .snapshots()
             .map(dataListFromSnapshot!);
