@@ -22,11 +22,8 @@ class FirestoreService<T> {
     var isHebrew = regExp.hasMatch(query);
     final collectionReference = firebaseFirestore.collection(collectionName!);
     //For teacher search
-    if (collectionName == "users") {
-      print("######## user search ############");
+/*    if (collectionName == "users") {
       if (query.isEmpty) {
-        print("######## empty string ############");
-
         return collectionReference
             .where('type', isEqualTo: 0)
             .limit(limitOfRetrievedData!)
@@ -51,7 +48,7 @@ class FirestoreService<T> {
             .snapshots()
             .map(dataListFromSnapshot!);
       }
-    }
+    }*/
     if (query.isEmpty) {
       return collectionReference
           .limit(limitOfRetrievedData!)
