@@ -28,7 +28,7 @@ class FirestoreService<T> {
         print("######## empty string ############");
 
         return collectionReference
-            // .where('type', isEqualTo: 0)
+            .where('type', isEqualTo: 0)
             .limit(limitOfRetrievedData!)
             .snapshots()
             .map(dataListFromSnapshot!);
