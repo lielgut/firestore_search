@@ -22,7 +22,7 @@ class FirestoreService<T> {
     var isHebrew = regExp.hasMatch(query);
     final collectionReference = firebaseFirestore.collection(collectionName!);
     //For teacher search
-/*    if (collectionName == "users") {
+    if (collectionName == "users") {
       if (query.isEmpty) {
         return collectionReference
             .where('type', isEqualTo: 0)
@@ -31,24 +31,24 @@ class FirestoreService<T> {
             .map(dataListFromSnapshot!);
       } else if (isHebrew) {
         return collectionReference
-            .where('type', isEqualTo: 0)
             .orderBy('$searchBy', descending: false)
             .where('$searchBy', isGreaterThanOrEqualTo: query)
             .where('$searchBy', isLessThan: query + '\u05eb')
+            .where('type', isEqualTo: 0)
             .limit(limitOfRetrievedData!)
             .snapshots()
             .map(dataListFromSnapshot!);
       } else {
         return collectionReference
-            .where('type', isEqualTo: 0)
             .orderBy('$searchBy', descending: false)
             .where('$searchBy', isGreaterThanOrEqualTo: query)
             .where('$searchBy', isLessThan: query + 'z')
+            .where('type', isEqualTo: 0)
             .limit(limitOfRetrievedData!)
             .snapshots()
             .map(dataListFromSnapshot!);
       }
-    }*/
+    }
     if (query.isEmpty) {
       return collectionReference
           .limit(limitOfRetrievedData!)
