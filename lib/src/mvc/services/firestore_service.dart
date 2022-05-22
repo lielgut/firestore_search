@@ -21,7 +21,7 @@ class FirestoreService<T> {
     RegExp regExp = RegExp("[ -&(-+\-/-9=?-@^{}\u0590-\u05fe]", unicode: true);
     var isHebrew = regExp.hasMatch(query);
     final collectionReference = firebaseFirestore.collection(collectionName!);
-    //For teacher search
+    //For teacher search (userType = 0)
     if (collectionName == "users") {
       if (query.isEmpty) {
         return collectionReference
