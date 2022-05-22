@@ -34,8 +34,8 @@ class FirestoreService<T> {
             .map(dataListFromSnapshot!);
       } else if (isHebrew) {
         return collectionReference
-            .orderBy('$searchBy', descending: false)
             .where('type', isEqualTo: 0)
+            .orderBy('$searchBy', descending: false)
             .where('$searchBy', isGreaterThanOrEqualTo: query)
             .where('$searchBy', isLessThan: query + '\u05eb')
             .limit(limitOfRetrievedData!)
@@ -43,8 +43,8 @@ class FirestoreService<T> {
             .map(dataListFromSnapshot!);
       } else {
         return collectionReference
-            .orderBy('$searchBy', descending: false)
             .where('type', isEqualTo: 0)
+            .orderBy('$searchBy', descending: false)
             .where('$searchBy', isGreaterThanOrEqualTo: query)
             .where('$searchBy', isLessThan: query + 'z')
             .limit(limitOfRetrievedData!)
