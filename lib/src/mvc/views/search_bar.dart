@@ -15,6 +15,7 @@ class FirestoreSearchBar extends StatelessWidget {
   final bool? isSearchTeacher;
   final String? tag;
   final String? hintText;
+  final void Function()? onSearch;
 
   FirestoreSearchBar(
       {required this.tag,
@@ -27,6 +28,7 @@ class FirestoreSearchBar extends StatelessWidget {
       this.showSearchIcon = false,
       this.isSearchTeacher = false,
       this.hintText,
+      this.onSearch,
       Key? key}); // const FirestoreSearchBar({Key? key}) : super(key: key);
 
   @override
@@ -45,6 +47,7 @@ class FirestoreSearchBar extends StatelessWidget {
               onClearButtonPressed: _controller.clearSearchQuery,
               onSearchQueryChanged: _controller.updateSearchQuery,
               hintText: hintText,
+              onSearch: onSearch,
               isSearchTeacher: isSearchTeacher,
             ));
   }

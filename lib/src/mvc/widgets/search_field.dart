@@ -14,6 +14,7 @@ class SearchFiled extends StatefulWidget {
   final Function(String)? onSearchQueryUpdated;
   final Function(String)? onEditingComplete;
   final String? hintText;
+  final void Function()? onSearch;
   TextEditingController? searchQueryController;
 
   SearchFiled(
@@ -31,6 +32,7 @@ class SearchFiled extends StatefulWidget {
       this.onSearchQueryUpdated,
       this.onEditingComplete,
       this.hintText,
+      this.onSearch,
       Key? key})
       : super(key: key);
 
@@ -52,6 +54,7 @@ class _SearchFiledState extends State<SearchFiled> {
     searchFocusNode.dispose();
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     return Stack(alignment: AlignmentDirectional.topCenter, children: [
@@ -77,6 +80,10 @@ class _SearchFiledState extends State<SearchFiled> {
             color: widget.searchBackgroundColor ?? Colors.blueGrey.withOpacity(.2),
           ),
           child: TextField(
+            onTap: widget.onSearch ??
+                () {
+                  return;
+                },
             controller: widget.searchQueryController,
             focusNode: searchFocusNode,
             decoration: InputDecoration(
@@ -90,14 +97,16 @@ class _SearchFiledState extends State<SearchFiled> {
               focusedBorder: InputBorder.none,
               hintStyle: TextStyle(color: widget.searchTextHintColor),
               prefixIcon: IconButton(
-                      icon: Image.asset(
-                        'assets/ui/icons/search.png',
-                        width: 16.4,
-                        height: 16.55,
-                      ),
-                      onPressed: ()=>searchFocusNode.requestFocus(),
-                    )
-                 ,
+                icon: Image.asset(
+                  'assets/ui/icons/search.png',
+                  width: 16.4,
+                  height: 16.55,
+                ),
+                onPressed: () {
+                  searchFocusNode.requestFocus();
+                  if (widget.onSearch != null) widget.onSearch!();
+                },
+              ),
               suffixIcon: widget.searchQueryController!.text.isNotEmpty
                   ? GestureDetector(
                       child: const Icon(Icons.close_rounded),
